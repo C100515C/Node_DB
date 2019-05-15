@@ -42,31 +42,31 @@ var now = Date.now();
 //         console.log('failed:' + err);
 // });
 
-// (async () =>{
-//     var dog = await Pet.create({
-//         id: 'g-' + now,
-//         name: 'Gaffey',
-//         gender: false,
-//         birth: '2007-07-07',
-//         createdAt: now,
-//         updatedAt: now,
-//         version: 0
-//     });
-//     console.log('created:' + JSON.stringify(dog));
-// })();
+(async () =>{
+    var dog = await Pet.create({
+        id: 'g-' + now,
+        name: 'Gaffey',
+        gender: false,
+        birth: '2007-07-07',
+        createdAt: now,
+        updatedAt: now,
+        version: 0
+    });
+    console.log('created:' + JSON.stringify(dog));
+})();
 
 // /查询操作
-(async () =>{
-    var pets = await Pet.findAll({
-        where:{
-            name: 'Gaffey'
-        }
-    });
-    console.log(`find ${pets.length} pets:`);
-    for (let p of pets){
-        console.log(JSON.stringify(p));
-    }
-})();
+// (async () =>{
+//     var pets = await Pet.findAll({
+//         where:{
+//             name: 'Gaffey'
+//         }
+//     });
+//     console.log(`find ${pets.length} pets:`);
+//     for (let p of pets){
+//         console.log(JSON.stringify(p));
+//     }
+// })();
 
 function queryFromSomewhere(name){
     var pets = Pet.findAll({
